@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750">
+<rect width="600" height="750" fill="#ead8bd"/>
+<ellipse cx="305" cy="675" rx="190" ry="28" fill="#3b281c" opacity=".18"/>
+<rect x="82" y="55" width="430" height="610" rx="18" fill="#2c1c13" opacity=".25"/>
+<rect x="65" y="38" width="430" height="610" rx="18" fill="#815a35" stroke="#d8b36b" stroke-width="8"/>
+<rect x="96" y="69" width="368" height="548" rx="7" fill="none" stroke="#ead39a" stroke-width="3"/>
+<circle cx="280" cy="330" r="105" fill="none" stroke="#ead39a" stroke-width="3"/>
+<text x="280" y="320" text-anchor="middle" fill="#fff0c7" font-size="35" font-family="serif" font-weight="bold">سَفِينَةُ النَّجَاة</text>
+<text x="280" y="380" text-anchor="middle" fill="#e5c47e" font-size="17" font-family="serif">DINAKITAB</text>
+</svg>

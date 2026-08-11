@@ -1,3 +1,1 @@
-DINAKITAB
-Buka index.html di browser. Folder images berisi 8 gambar cover kitab lokal dalam SVG.
-File utama: index.html, style.css, script.js.
+SEMUA GAMBAR SUDAH ADA: folder images berisi 8 cover kitab + hero-books.svg. Buka index.html.
