@@ -1,1 +1,1 @@
-PENTING: jangan pisahkan folder images dari index.html. Buka index.html setelah ZIP diekstrak penuh. Gambar sekarang dipanggil menggunakan <img> dengan path lokal.
+Buka index.html untuk melihat website. Semua gambar produk disimpan lokal di folder images agar tetap muncul saat ZIP diekstrak.

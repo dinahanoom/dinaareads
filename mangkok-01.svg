@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+ <radialGradient id="bg"><stop offset="0" stop-color="#f9fcff"/><stop offset="1" stop-color="#dbe8f3"/></radialGradient>
+ <radialGradient id="cer"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#e8f1f7"/><stop offset="1" stop-color="#a9c3d8"/></radialGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<ellipse cx="400" cy="455" rx="240" ry="40" fill="#71899d" opacity=".22" filter="url(#shadow)"/>
+<path d="M175 290 Q400 170 625 290 L600 405 Q560 510 400 525 Q240 510 200 405Z" fill="url(#cer)" stroke="#94b2c9" stroke-width="7"/>
+<ellipse cx="400" cy="292" rx="225" ry="112" fill="#fff" stroke="#6f9fc4" stroke-width="13"/>
+<ellipse cx="400" cy="292" rx="175" ry="78" fill="#edf5fa" stroke="#c8dbe8" stroke-width="4"/>
+<path d="M220 280 Q390 205 570 270" fill="none" stroke="#fff" stroke-width="14" opacity=".75"/>
+</svg>
