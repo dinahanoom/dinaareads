@@ -1,90 +1,21 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maktabah Dina — Toko Buku Aesthetic</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+<!doctype html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DinaKitab — Toko Kitab Islami</title><link rel="stylesheet" href="style.css"></head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="#">Maktabah <span>Dina</span></a>
-    <nav>
-      <a href="#home">Beranda</a>
-      <a href="#books">Buku</a>
-      <a href="#about">Tentang</a>
-    </nav>
-    <button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-text">
-        <p class="eyebrow">✦ Selamat datang di Maktabah Dina</p>
-        <h1>Temukan cerita,<br><em>temukan ilmu.</em></h1>
-        <p class="subtitle">Toko buku kecil dengan koleksi pilihan untuk menemani hari-harimu membaca, belajar, dan bertumbuh.</p>
-        <a class="primary-btn" href="#books">Jelajahi Buku →</a>
-      </div>
-      <div class="hero-card">
-        <div class="book-stack">
-          <div class="book book-1">FIQIH<br><small>UNTUK PEMULA</small></div>
-          <div class="book book-2">THE ART<br>OF READING</div>
-          <div class="book book-3">CATATAN<br>ILMU</div>
-        </div>
-        <span class="leaf">☘</span>
-      </div>
-    </section>
-
-    <section class="section" id="books">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Koleksi pilihan</p>
-          <h2>Buku favorit minggu ini</h2>
-        </div>
-        <div class="filters">
-          <button class="filter active" data-category="all">Semua</button>
-          <button class="filter" data-category="islam">Islami</button>
-          <button class="filter" data-category="novel">Novel</button>
-          <button class="filter" data-category="self">Pengembangan Diri</button>
-        </div>
-      </div>
-      <div class="book-grid" id="bookGrid"></div>
-    </section>
-
-    <section class="quote" id="about">
-      <div class="quote-mark">“</div>
-      <p>Carilah ilmu dari buaian hingga liang lahat.</p>
-      <span>— Maktabah Dina</span>
-    </section>
-
-    <section class="about">
-      <div>
-        <p class="eyebrow">Tentang kami</p>
-        <h2>Ruang kecil untuk para pencinta buku.</h2>
-      </div>
-      <p>Maktabah Dina dibuat untuk menghadirkan pengalaman belanja buku yang sederhana, hangat, dan aesthetic. Pilih buku favoritmu dan mulai perjalanan membaca hari ini.</p>
-    </section>
-  </main>
-
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-      <h3>Keranjangmu</h3>
-      <button id="closeCart">×</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-total"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
-    <button class="checkout" id="checkout">Checkout</button>
-  </div>
-  <div class="overlay" id="overlay"></div>
-
-  <footer>
-    <strong>Maktabah Dina</strong>
-    <span>© 2026 — Dibuat dengan cinta untuk para pembaca.</span>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<header><nav><div class="logo">Dina<span>Kitab</span></div>
+<div class="links"><a href="#home">Beranda</a><a href="#koleksi">Koleksi Kitab</a><a href="#tentang">Tentang</a></div>
+<button id="cartBtn">🛒 <b id="count">0</b></button></nav></header>
+<section class="hero" id="home"><div><p class="eyebrow">✦ TOKO KITAB ISLAMI ✦</p>
+<h1>Temukan Kitab,<br><span>Temukan Ilmu.</span></h1><p class="desc">Koleksi kitab pilihan untuk menemani perjalananmu dalam menuntut ilmu.</p>
+<a class="btn" href="#koleksi">Lihat Koleksi →</a></div><div class="hero-books">
+<div class="stack"><div>الفقه</div><div>العقيدة</div><div>الحديث</div></div></div></section>
+<section class="collection" id="koleksi"><div class="head"><div><p class="eyebrow">KOLEKSI PILIHAN</p><h2>Kitab Favorit</h2></div>
+<input id="search" placeholder="Cari kitab..."></div>
+<div class="filters"><button class="active" data-cat="Semua">Semua</button><button data-cat="Fiqih">Fiqih</button>
+<button data-cat="Hadits">Hadits</button><button data-cat="Akidah">Akidah</button><button data-cat="Tafsir">Tafsir</button></div>
+<div class="grid" id="grid"></div></section>
+<section class="quote" id="tentang"><div>“</div><p>Carilah ilmu dari buaian hingga liang lahat.</p><small>— Semangat menuntut ilmu</small></section>
+<footer>© 2026 DinaKitab — Teman perjalanan mencari ilmu.</footer>
+<aside id="cart"><div class="carthead"><h3>Keranjang</h3><button id="close">✕</button></div>
+<div id="items"></div><div class="total"><span>Total</span><b id="total">Rp0</b></div><button class="checkout" id="checkout">Pesan Sekarang</button></aside>
+<div id="overlay"></div><script src="script.js"></script></body></html>

@@ -1,37 +1,18 @@
-const books=[
- {id:1,title:'Fiqih untuk Pemula',cat:'islam',label:'FIQIH\nUNTUK PEMULA',price:65000},
- {id:2,title:'Catatan Seorang Pembaca',cat:'novel',label:'CATATAN\nSEORANG PEMBACA',price:72000},
- {id:3,title:'Jalan Menuntut Ilmu',cat:'islam',label:'JALAN\nMENUNTUT ILMU',price:58000},
- {id:4,title:'Seni Bertumbuh',cat:'self',label:'SENI\nBERTUMBUH',price:69000},
- {id:5,title:'Kisah di Balik Halaman',cat:'novel',label:'KISAH DI BALIK\nHALAMAN',price:75000},
- {id:6,title:'Adab dan Akhlak',cat:'islam',label:'ADAB &\nAKHLAK',price:62000},
- {id:7,title:'Pelan-Pelan Menjadi Hebat',cat:'self',label:'PELAN-PELAN\nMENJADI HEBAT',price:70000},
- {id:8,title:'Perpustakaan Senja',cat:'novel',label:'PERPUSTAKAAN\nSENJA',price:68000}
-];
+const books=[{'title': 'Bulughul Maram', 'author': 'Ibnu Hajar Al-Asqalani', 'cat': 'Hadits', 'price': 85000, 'color': 'brown', 'arabic': 'بُلُوغُ الْمَرَام'}, {'title': 'Fathul Qarib', 'author': 'Ibnu Qasim Al-Ghazi', 'cat': 'Fiqih', 'price': 75000, 'color': 'green', 'arabic': 'فَتْحُ الْقَرِيب'}, {'title': 'Riyadhus Shalihin', 'author': 'Imam An-Nawawi', 'cat': 'Hadits', 'price': 95000, 'color': 'olive', 'arabic': 'رِيَاضُ الصَّالِحِينَ'}, {'title': 'Tafsir Jalalain', 'author': 'Al-Mahalli & As-Suyuthi', 'cat': 'Tafsir', 'price': 120000, 'color': 'navy', 'arabic': 'تَفْسِيرُ الْجَلَالَيْن'}, {'title': 'Aqidatul Awam', 'author': 'Syekh Ahmad Al-Marzuqi', 'cat': 'Akidah', 'price': 65000, 'color': 'maroon', 'arabic': 'عَقِيدَةُ الْعَوَام'}, {'title': 'Safinatun Najah', 'author': 'Syekh Salim bin Sumair', 'cat': 'Fiqih', 'price': 60000, 'color': 'teal', 'arabic': 'سَفِينَةُ النَّجَاة'}, {'title': 'Al-Adzkar', 'author': 'Imam An-Nawawi', 'cat': 'Hadits', 'price': 90000, 'color': 'purple', 'arabic': 'الْأَذْكَار'}, {'title': 'Tafsir Ibnu Katsir', 'author': 'Ibnu Katsir', 'cat': 'Tafsir', 'price': 145000, 'color': 'gold', 'arabic': 'تَفْسِيرُ ابْنِ كَثِير'}];
 let cart=[];
-const grid=document.getElementById('bookGrid');
-const format=n=>'Rp'+n.toLocaleString('id-ID');
-function renderBooks(category='all'){
- grid.innerHTML=books.filter(b=>category==='all'||b.cat===category).map(b=>`
- <article class="product"><div class="cover">${b.label.replace('\n','<br>')}</div>
- <div class="category">${b.cat==='self'?'Pengembangan Diri':b.cat==='islam'?'Islami':'Novel'}</div>
- <h3>${b.title}</h3><div class="price">${format(b.price)}</div>
- <button class="add" onclick="addToCart(${b.id})">+ Tambah ke keranjang</button></article>`).join('');
+const rupiah=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n);
+const grid=document.querySelector('#grid'),search=document.querySelector('#search');
+function render(){
+ const cat=document.querySelector('.filters .active').dataset.cat,q=search.value.toLowerCase();
+ const list=books.filter(b=>(cat==='Semua'||b.cat===cat)&&(b.title.toLowerCase().includes(q)||b.author.toLowerCase().includes(q)));
+ grid.innerHTML=list.map((b,i)=>`<article class="card"><div class="cover" style="background-image:url('images/kitab-${books.indexOf(b)+1}.svg')"><span>${b.arabic}</span></div><div class="body"><div class="cat">${b.cat.toUpperCase()}</div><h3>${b.title}</h3><div class="author">${b.author}</div><div class="bottom"><b class="price">${rupiah(b.price)}</b><button class="add" onclick="add(${books.indexOf(b)})">+ Keranjang</button></div></div></article>`).join('')||'<p>Kitab tidak ditemukan.</p>';
 }
-function addToCart(id){const b=books.find(x=>x.id===id);cart.push(b);renderCart();openCart()}
-function removeFromCart(i){cart.splice(i,1);renderCart()}
-function renderCart(){
- document.getElementById('cartCount').textContent=cart.length;
- const box=document.getElementById('cartItems');
- box.innerHTML=cart.length?cart.map((b,i)=>`<div class="cart-row"><span>${b.title}<br><small>${format(b.price)}</small></span><button class="remove" onclick="removeFromCart(${i})">Hapus</button></div>`).join(''):'<p style="color:#888">Keranjang masih kosong.</p>';
- document.getElementById('cartTotal').textContent=format(cart.reduce((s,b)=>s+b.price,0));
-}
-function openCart(){document.getElementById('cartPanel').classList.add('open');document.getElementById('overlay').classList.add('show')}
-function closeCart(){document.getElementById('cartPanel').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderBooks(btn.dataset.category)}));
-document.getElementById('cartBtn').onclick=openCart;
-document.getElementById('closeCart').onclick=closeCart;
-document.getElementById('overlay').onclick=closeCart;
-document.getElementById('checkout').onclick=()=>alert(cart.length?'Terima kasih! Fitur pembayaran dapat dihubungkan ke payment gateway nanti.':'Keranjang masih kosong.');
-renderBooks();
-renderCart();
+function add(i){cart.push(books[i]);update();openCart()}
+function remove(i){cart.splice(i,1);update()}
+function update(){document.querySelector('#count').textContent=cart.length;document.querySelector('#items').innerHTML=cart.length?cart.map((b,i)=>`<div class="item"><span><b>${b.title}</b><br>${rupiah(b.price)}</span><button onclick="remove(${i})">Hapus</button></div>`).join(''):'<p style="color:#888">Keranjang masih kosong.</p>';document.querySelector('#total').textContent=rupiah(cart.reduce((s,b)=>s+b.price,0))}
+function openCart(){document.querySelector('#cart').classList.add('open');document.querySelector('#overlay').classList.add('show')}
+function closeCart(){document.querySelector('#cart').classList.remove('open');document.querySelector('#overlay').classList.remove('show')}
+document.querySelectorAll('.filters button').forEach(x=>x.onclick=()=>{document.querySelector('.filters .active').classList.remove('active');x.classList.add('active');render()});
+search.oninput=render;document.querySelector('#cartBtn').onclick=openCart;document.querySelector('#close').onclick=closeCart;document.querySelector('#overlay').onclick=closeCart;
+document.querySelector('#checkout').onclick=()=>alert(cart.length?'Pesanan siap diproses!':'Keranjang masih kosong.');
+render();
