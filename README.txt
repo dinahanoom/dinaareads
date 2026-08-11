@@ -1,1 +1,1 @@
-SEMUA GAMBAR SUDAH ADA: folder images berisi 8 cover kitab + hero-books.svg. Buka index.html.
+PENTING: jangan pisahkan folder images dari index.html. Buka index.html setelah ZIP diekstrak penuh. Gambar sekarang dipanggil menggunakan <img> dengan path lokal.

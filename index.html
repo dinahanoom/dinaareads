@@ -1,6 +1,36 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DinaKitab</title><link rel="stylesheet" href="style.css"></head><body>
-<header><nav><div class="logo">Dina<span>Kitab</span></div><div class="links"><a href="#home">Beranda</a><a href="#koleksi">Koleksi Kitab</a><a href="#tentang">Tentang</a></div><button id="cartBtn">🛒 <b id="count">0</b></button></nav></header>
-<section class="hero" id="home"><div><p class="eyebrow">✦ TOKO KITAB ISLAMI ✦</p><h1>Temukan Kitab,<br><span>Temukan Ilmu.</span></h1><p class="desc">Koleksi kitab pilihan untuk menemani perjalananmu dalam menuntut ilmu.</p><a class="btn" href="#koleksi">Lihat Koleksi →</a></div><img class="hero-img" src="images/hero-books.svg" alt="Gambar kitab islami"></section>
-<section class="collection" id="koleksi"><div class="head"><div><p class="eyebrow">KOLEKSI PILIHAN</p><h2>Kitab Favorit</h2></div><input id="search" placeholder="🔎 Cari kitab..."></div><div class="filters"><button class="active" data-cat="Semua">Semua</button><button data-cat="Fiqih">Fiqih</button><button data-cat="Hadits">Hadits</button><button data-cat="Akidah">Akidah</button><button data-cat="Tafsir">Tafsir</button></div><div class="grid" id="grid"></div></section>
-<section class="quote" id="tentang"><div>“</div><p>Carilah ilmu dari buaian hingga liang lahat.</p></section><footer>© 2026 DinaKitab</footer>
-<aside id="cart"><div class="carthead"><h3>Keranjang</h3><button id="close">✕</button></div><div id="items"></div><div class="total"><span>Total</span><b id="total">Rp0</b></div></aside><div id="overlay"></div><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DinaKitab - Toko Kitab Islami</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><nav><div class="logo">Dina<span>Kitab</span></div>
+<div class="links"><a href="#home">Beranda</a><a href="#koleksi">Koleksi Kitab</a><a href="#tentang">Tentang</a></div>
+<button id="cartBtn">🛒 <b id="count">0</b></button></nav></header>
+
+<section class="hero" id="home">
+<div class="hero-copy"><p class="eyebrow">✦ TOKO KITAB ISLAMI ✦</p>
+<h1>Temukan Kitab,<br><span>Temukan Ilmu.</span></h1>
+<p class="desc">Koleksi kitab pilihan untuk menemani perjalananmu dalam menuntut ilmu.</p>
+<a class="btn" href="#koleksi">Lihat Koleksi →</a></div>
+<div class="hero-visual"><img src="images/hero-books.svg" alt="Koleksi kitab islami"></div>
+</section>
+
+<section class="collection" id="koleksi">
+<div class="head"><div><p class="eyebrow">KOLEKSI PILIHAN</p><h2>Kitab Favorit</h2></div>
+<input id="search" type="search" placeholder="🔎 Cari kitab..."></div>
+<div class="filters"><button class="active" data-cat="Semua">Semua</button><button data-cat="Fiqih">Fiqih</button><button data-cat="Hadits">Hadits</button><button data-cat="Akidah">Akidah</button><button data-cat="Tafsir">Tafsir</button></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section class="quote" id="tentang"><div>“</div><p>Carilah ilmu dari buaian hingga liang lahat.</p></section>
+<footer>© 2026 DinaKitab — Teman perjalanan mencari ilmu.</footer>
+
+<aside id="cart"><div class="carthead"><h3>Keranjang</h3><button id="close">✕</button></div>
+<div id="items"></div><div class="total"><span>Total</span><b id="total">Rp0</b></div></aside>
+<div id="overlay"></div>
+<script src="script.js"></script>
+</body></html>

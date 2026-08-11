@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-<rect width="800" height="600" fill="#ead8bd"/>
-<ellipse cx="410" cy="510" rx="280" ry="38" fill="#3b281c" opacity=".18"/>
-<g transform="translate(130 80) rotate(-7)"><rect width="220" height="360" rx="14" fill="#5a361f" stroke="#d9b56e" stroke-width="8"/><text x="110" y="195" text-anchor="middle" fill="#f4dfac" font-size="38" font-family="serif">الفقه</text></g>
-<g transform="translate(285 55) rotate(4)"><rect width="230" height="375" rx="14" fill="#764b2c" stroke="#d9b56e" stroke-width="8"/><text x="115" y="205" text-anchor="middle" fill="#f4dfac" font-size="36" font-family="serif">العقيدة</text></g>
-<g transform="translate(465 100) rotate(10)"><rect width="205" height="345" rx="14" fill="#40271a" stroke="#d9b56e" stroke-width="8"/><text x="102" y="190" text-anchor="middle" fill="#f4dfac" font-size="34" font-family="serif">الحديث</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650">
+<rect width="900" height="650" fill="#ead8bd"/>
+<ellipse cx="450" cy="555" rx="310" ry="45" fill="#3b281c" opacity=".16"/>
+<g transform="translate(120 90) rotate(-8)"><rect width="230" height="390" rx="15" fill="#5a361f" stroke="#d9b56e" stroke-width="9"/><text x="115" y="210" text-anchor="middle" fill="#f4dfac" font-size="40" font-family="serif">الفقه</text></g>
+<g transform="translate(325 65) rotate(4)"><rect width="245" height="405" rx="15" fill="#764b2c" stroke="#d9b56e" stroke-width="9"/><text x="122" y="220" text-anchor="middle" fill="#f4dfac" font-size="38" font-family="serif">العقيدة</text></g>
+<g transform="translate(520 110) rotate(10)"><rect width="215" height="365" rx="15" fill="#40271a" stroke="#d9b56e" stroke-width="9"/><text x="107" y="200" text-anchor="middle" fill="#f4dfac" font-size="36" font-family="serif">الحديث</text></g>
 </svg>
